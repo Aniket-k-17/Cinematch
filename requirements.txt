@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+streamlit==1.28.0
+pandas
+numpy>=2.0.0
+scikit-learn
+requests
+ 
+=======
+altair
+pandas
+streamlit
+>>>>>>> e4075f8ce3629ee326fefd0cecb0351e72dcb335
