@@ -24,7 +24,7 @@ st.set_page_config(
 # ─────────────────────────────────────────
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 TMDB_IMG_BASE = "https://image.tmdb.org/t/p/w500"
-PLACEHOLDER_IMG = "https://via.placeholder.com/500x750/1a1a2e/ffffff?text=No+Image"
+PLACEHOLDER_IMG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNzUwIiB2aWV3Qm94PSIwIDAgNTAwIDc1MCI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWEyZSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0RNIFNhbnMnLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM2IiBmaWxsPSIjZmZmZmZmIiBmb250LXdlaWdodD0iYm9sZCI+Tk8gSU1BR0U8L3RleHQ+Cjwvc3ZnPg=="
 
 # ─────────────────────────────────────────
 #  LOAD DATA  (cached so it only runs once)
