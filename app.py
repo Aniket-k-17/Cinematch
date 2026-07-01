@@ -4,6 +4,11 @@ import numpy as np
 import requests
 import os
 import re
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
 
 # ─────────────────────────────────────────
 #  PAGE CONFIG  (must be first Streamlit call)
@@ -17,7 +22,7 @@ st.set_page_config(
 # ─────────────────────────────────────────
 #  CONSTANTS
 # ─────────────────────────────────────────
-TMDB_API_KEY = os.getenv("TMDB_API_KEY", "a16dae945050d925b1bd757c045394a2")
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 TMDB_IMG_BASE = "https://image.tmdb.org/t/p/w500"
 PLACEHOLDER_IMG = "https://via.placeholder.com/500x750/1a1a2e/ffffff?text=No+Image"
 
@@ -66,6 +71,8 @@ def format_genres(genres):
 
 def fetch_poster(movie_title):
     """Fetch the poster URL from TMDB. Returns placeholder if not found."""
+    if not TMDB_API_KEY:
+        return PLACEHOLDER_IMG
     try:
         response = requests.get(
             "https://api.themoviedb.org/3/search/movie",
@@ -231,6 +238,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("---")
+
+if not TMDB_API_KEY:
+    st.warning("⚠️ **Configuration Warning:** `TMDB_API_KEY` environment variable is not set. Poster images will fall back to placeholders. Please configure it in a `.env` file (see `.env.example`).")
 
 # ─────────────────────────────────────────
 #  MOVIE SELECTOR
